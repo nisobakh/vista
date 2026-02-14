@@ -1,0 +1,297 @@
+date	amount	type	category	description
+2025-11-11	395.89	sale	food_sales	Daily food truck sales
+2025-11-11	-10.29	expense	processing_fees	Square processing fees
+2025-11-11	-314.28	expense	produce	Produce and ingredients restock
+2025-11-12	385.6	payout	bank_deposit	Square deposit to bank
+2025-11-12	374.58	sale	food_sales	Daily food truck sales
+2025-11-12	-9.74	expense	processing_fees	Square processing fees
+2025-11-13	364.84	payout	bank_deposit	Square deposit to bank
+2025-11-13	391.18	sale	food_sales	Daily food truck sales
+2025-11-13	-10.17	expense	processing_fees	Square processing fees
+2025-11-14	381.01	payout	bank_deposit	Square deposit to bank
+2025-11-14	498.53	sale	food_sales	Daily food truck sales
+2025-11-14	-12.96	expense	processing_fees	Square processing fees
+2025-11-14	-435.91	expense	produce	Weekend produce and ingredients restock
+2025-11-15	485.57	payout	bank_deposit	Square deposit to bank
+2025-11-15	617.73	sale	food_sales	Daily food truck sales
+2025-11-15	-16.06	expense	processing_fees	Square processing fees
+2025-11-15	-340.0	expense	insurance	Monthly business insurance
+2025-11-16	601.67	payout	bank_deposit	Square deposit to bank
+2025-11-16	689.26	sale	food_sales	Daily food truck sales
+2025-11-16	-17.92	expense	processing_fees	Square processing fees
+2025-11-17	671.34	payout	bank_deposit	Square deposit to bank
+2025-11-18	390.18	sale	food_sales	Daily food truck sales
+2025-11-18	-10.14	expense	processing_fees	Square processing fees
+2025-11-18	-302.35	expense	produce	Produce and ingredients restock
+2025-11-19	380.04	payout	bank_deposit	Square deposit to bank
+2025-11-19	410.25	sale	food_sales	Daily food truck sales
+2025-11-19	-10.67	expense	processing_fees	Square processing fees
+2025-11-19	-14.7	refund	refunds	Customer refund
+2025-11-19	-105.2	expense	supplies	Paper goods, napkins, containers
+2025-11-20	399.58	payout	bank_deposit	Square deposit to bank
+2025-11-20	307.24	sale	food_sales	Daily food truck sales
+2025-11-20	-7.99	expense	processing_fees	Square processing fees
+2025-11-20	-185.0	expense	propane	Monthly propane refill
+2025-11-21	299.25	payout	bank_deposit	Square deposit to bank
+2025-11-21	552.85	sale	food_sales	Daily food truck sales
+2025-11-21	-14.37	expense	processing_fees	Square processing fees
+2025-11-21	-474.05	expense	produce	Weekend produce and ingredients restock
+2025-11-22	538.48	payout	bank_deposit	Square deposit to bank
+2025-11-22	727.83	sale	food_sales	Daily food truck sales
+2025-11-22	-18.92	expense	processing_fees	Square processing fees
+2025-11-22	-10.05	refund	refunds	Customer refund
+2025-11-22	-338.59	expense	maintenance	Refrigeration unit service
+2025-11-23	708.91	payout	bank_deposit	Square deposit to bank
+2025-11-23	665.08	sale	food_sales	Daily food truck sales
+2025-11-23	-17.29	expense	processing_fees	Square processing fees
+2025-11-23	-12.63	refund	refunds	Customer refund
+2025-11-25	647.79	payout	bank_deposit	Square deposit to bank
+2025-11-25	411.13	sale	food_sales	Daily food truck sales
+2025-11-25	-10.69	expense	processing_fees	Square processing fees
+2025-11-25	-401.31	expense	produce	Produce and ingredients restock
+2025-11-26	400.44	payout	bank_deposit	Square deposit to bank
+2025-11-26	404.9	sale	food_sales	Daily food truck sales
+2025-11-26	-10.53	expense	processing_fees	Square processing fees
+2025-11-27	394.37	payout	bank_deposit	Square deposit to bank
+2025-11-27	335.81	sale	food_sales	Daily food truck sales
+2025-11-27	-8.73	expense	processing_fees	Square processing fees
+2025-11-28	327.08	payout	bank_deposit	Square deposit to bank
+2025-11-28	609.61	sale	food_sales	Daily food truck sales
+2025-11-28	-15.85	expense	processing_fees	Square processing fees
+2025-11-28	-460.17	expense	produce	Weekend produce and ingredients restock
+2025-11-29	743.57	sale	food_sales	Daily food truck sales
+2025-11-29	-19.33	expense	processing_fees	Square processing fees
+2025-11-30	593.76	payout	bank_deposit	Square deposit to bank
+2025-11-30	724.24	payout	bank_deposit	Square deposit to bank
+2025-11-30	600.24	sale	food_sales	Daily food truck sales
+2025-11-30	-15.61	expense	processing_fees	Square processing fees
+2025-12-01	584.63	payout	bank_deposit	Square deposit to bank
+2025-12-01	-1800.0	expense	commissary_rent	Monthly commissary kitchen rent
+2025-12-02	470.67	sale	food_sales	Daily food truck sales
+2025-12-02	-12.24	expense	processing_fees	Square processing fees
+2025-12-02	-310.75	expense	produce	Produce and ingredients restock
+2025-12-03	429.69	sale	food_sales	Daily food truck sales
+2025-12-03	-11.17	expense	processing_fees	Square processing fees
+2025-12-04	458.43	payout	bank_deposit	Square deposit to bank
+2025-12-04	418.52	payout	bank_deposit	Square deposit to bank
+2025-12-04	324.94	sale	food_sales	Daily food truck sales
+2025-12-04	-8.45	expense	processing_fees	Square processing fees
+2025-12-05	316.49	payout	bank_deposit	Square deposit to bank
+2025-12-05	544.88	sale	food_sales	Daily food truck sales
+2025-12-05	-14.17	expense	processing_fees	Square processing fees
+2025-12-05	-403.5	expense	produce	Weekend produce and ingredients restock
+2025-12-05	-124.33	expense	supplies	Paper goods, napkins, containers
+2025-12-06	753.25	sale	food_sales	Daily food truck sales
+2025-12-06	-19.58	expense	processing_fees	Square processing fees
+2025-12-07	530.71	payout	bank_deposit	Square deposit to bank
+2025-12-07	652.48	sale	food_sales	Daily food truck sales
+2025-12-07	-16.96	expense	processing_fees	Square processing fees
+2025-12-08	733.67	payout	bank_deposit	Square deposit to bank
+2025-12-08	635.52	payout	bank_deposit	Square deposit to bank
+2025-12-08	-311.69	expense	maintenance	Brake service
+2025-12-09	401.59	sale	food_sales	Daily food truck sales
+2025-12-09	-10.44	expense	processing_fees	Square processing fees
+2025-12-09	-310.7	expense	produce	Produce and ingredients restock
+2025-12-10	521.3	sale	food_sales	Daily food truck sales
+2025-12-10	-13.55	expense	processing_fees	Square processing fees
+2025-12-11	391.15	payout	bank_deposit	Square deposit to bank
+2025-12-11	407.01	sale	food_sales	Daily food truck sales
+2025-12-11	-10.58	expense	processing_fees	Square processing fees
+2025-12-11	-9.12	refund	refunds	Customer refund
+2025-12-12	507.75	payout	bank_deposit	Square deposit to bank
+2025-12-12	396.43	payout	bank_deposit	Square deposit to bank
+2025-12-12	660.32	sale	food_sales	Daily food truck sales
+2025-12-12	-17.17	expense	processing_fees	Square processing fees
+2025-12-12	-10.67	refund	refunds	Customer refund
+2025-12-12	-519.34	expense	produce	Weekend produce and ingredients restock
+2025-12-13	784.39	sale	food_sales	Daily food truck sales
+2025-12-13	-20.39	expense	processing_fees	Square processing fees
+2025-12-14	643.15	payout	bank_deposit	Square deposit to bank
+2025-12-14	599.12	sale	food_sales	Daily food truck sales
+2025-12-14	-15.58	expense	processing_fees	Square processing fees
+2025-12-14	-14.19	refund	refunds	Customer refund
+2025-12-15	764.0	payout	bank_deposit	Square deposit to bank
+2025-12-15	-340.0	expense	insurance	Monthly business insurance
+2025-12-16	583.54	payout	bank_deposit	Square deposit to bank
+2025-12-16	441.29	sale	food_sales	Daily food truck sales
+2025-12-16	-11.47	expense	processing_fees	Square processing fees
+2025-12-16	-321.09	expense	produce	Produce and ingredients restock
+2025-12-17	407.08	sale	food_sales	Daily food truck sales
+2025-12-17	-10.58	expense	processing_fees	Square processing fees
+2025-12-18	429.82	payout	bank_deposit	Square deposit to bank
+2025-12-18	396.5	payout	bank_deposit	Square deposit to bank
+2025-12-18	420.62	sale	food_sales	Daily food truck sales
+2025-12-18	-10.94	expense	processing_fees	Square processing fees
+2025-12-19	409.68	payout	bank_deposit	Square deposit to bank
+2025-12-19	675.63	sale	food_sales	Daily food truck sales
+2025-12-19	-17.57	expense	processing_fees	Square processing fees
+2025-12-19	-497.99	expense	produce	Weekend produce and ingredients restock
+2025-12-19	-102.91	expense	supplies	Paper goods, napkins, containers
+2025-12-20	810.01	sale	food_sales	Daily food truck sales
+2025-12-20	-21.06	expense	processing_fees	Square processing fees
+2025-12-20	-10.62	refund	refunds	Customer refund
+2025-12-20	-185.0	expense	propane	Monthly propane refill
+2025-12-21	658.06	payout	bank_deposit	Square deposit to bank
+2025-12-21	630.72	sale	food_sales	Daily food truck sales
+2025-12-21	-16.4	expense	processing_fees	Square processing fees
+2025-12-22	788.95	payout	bank_deposit	Square deposit to bank
+2025-12-22	-329.68	expense	maintenance	Tire replacement
+2025-12-23	614.32	payout	bank_deposit	Square deposit to bank
+2025-12-23	146.35	sale	food_sales	Daily food truck sales
+2025-12-23	-3.81	expense	processing_fees	Square processing fees
+2025-12-23	-396.43	expense	produce	Produce and ingredients restock
+2025-12-24	142.54	payout	bank_deposit	Square deposit to bank
+2025-12-24	178.09	sale	food_sales	Daily food truck sales
+2025-12-24	-4.63	expense	processing_fees	Square processing fees
+2025-12-25	173.46	payout	bank_deposit	Square deposit to bank
+2025-12-25	160.68	sale	food_sales	Daily food truck sales
+2025-12-25	-4.18	expense	processing_fees	Square processing fees
+2025-12-25	-11.4	refund	refunds	Customer refund
+2025-12-26	156.5	payout	bank_deposit	Square deposit to bank
+2025-12-26	227.27	sale	food_sales	Daily food truck sales
+2025-12-26	-5.91	expense	processing_fees	Square processing fees
+2025-12-26	-371.83	expense	produce	Weekend produce and ingredients restock
+2025-12-27	321.6	sale	food_sales	Daily food truck sales
+2025-12-27	-8.36	expense	processing_fees	Square processing fees
+2025-12-27	-11.69	refund	refunds	Customer refund
+2025-12-28	221.36	payout	bank_deposit	Square deposit to bank
+2025-12-28	301.85	sale	food_sales	Daily food truck sales
+2025-12-28	-7.85	expense	processing_fees	Square processing fees
+2025-12-29	313.24	payout	bank_deposit	Square deposit to bank
+2025-12-29	294.0	payout	bank_deposit	Square deposit to bank
+2025-12-30	409.1	sale	food_sales	Daily food truck sales
+2025-12-30	-10.64	expense	processing_fees	Square processing fees
+2025-12-30	-323.64	expense	produce	Produce and ingredients restock
+2025-12-31	482.39	sale	food_sales	Daily food truck sales
+2025-12-31	-12.54	expense	processing_fees	Square processing fees
+2026-01-01	398.46	payout	bank_deposit	Square deposit to bank
+2026-01-01	344.92	sale	food_sales	Daily food truck sales
+2026-01-01	-8.97	expense	processing_fees	Square processing fees
+2026-01-01	-9.57	refund	refunds	Customer refund
+2026-01-01	-1800.0	expense	commissary_rent	Monthly commissary kitchen rent
+2026-01-02	469.85	payout	bank_deposit	Square deposit to bank
+2026-01-02	335.95	payout	bank_deposit	Square deposit to bank
+2026-01-02	485.61	sale	food_sales	Daily food truck sales
+2026-01-02	-12.63	expense	processing_fees	Square processing fees
+2026-01-02	-450.03	expense	produce	Weekend produce and ingredients restock
+2026-01-03	539.93	sale	food_sales	Daily food truck sales
+2026-01-03	-14.04	expense	processing_fees	Square processing fees
+2026-01-04	472.98	payout	bank_deposit	Square deposit to bank
+2026-01-04	525.49	sale	food_sales	Daily food truck sales
+2026-01-04	-13.66	expense	processing_fees	Square processing fees
+2026-01-05	525.89	payout	bank_deposit	Square deposit to bank
+2026-01-05	511.83	payout	bank_deposit	Square deposit to bank
+2026-01-05	-89.25	expense	supplies	Paper goods, napkins, containers
+2026-01-06	308.12	sale	food_sales	Daily food truck sales
+2026-01-06	-8.01	expense	processing_fees	Square processing fees
+2026-01-06	-355.49	expense	produce	Produce and ingredients restock
+2026-01-07	394.37	sale	food_sales	Daily food truck sales
+2026-01-07	-10.25	expense	processing_fees	Square processing fees
+2026-01-08	300.11	payout	bank_deposit	Square deposit to bank
+2026-01-08	284.25	sale	food_sales	Daily food truck sales
+2026-01-08	-7.39	expense	processing_fees	Square processing fees
+2026-01-08	-207.12	expense	maintenance	Truck oil change and inspection
+2026-01-09	384.12	payout	bank_deposit	Square deposit to bank
+2026-01-09	276.86	payout	bank_deposit	Square deposit to bank
+2026-01-09	534.74	sale	food_sales	Daily food truck sales
+2026-01-09	-13.9	expense	processing_fees	Square processing fees
+2026-01-09	-429.39	expense	produce	Weekend produce and ingredients restock
+2026-01-10	520.84	payout	bank_deposit	Square deposit to bank
+2026-01-10	677.14	sale	food_sales	Daily food truck sales
+2026-01-10	-17.61	expense	processing_fees	Square processing fees
+2026-01-11	597.08	sale	food_sales	Daily food truck sales
+2026-01-11	-15.52	expense	processing_fees	Square processing fees
+2026-01-12	659.53	payout	bank_deposit	Square deposit to bank
+2026-01-12	581.56	payout	bank_deposit	Square deposit to bank
+2026-01-13	318.28	sale	food_sales	Daily food truck sales
+2026-01-13	-8.28	expense	processing_fees	Square processing fees
+2026-01-13	-15.07	refund	refunds	Customer refund
+2026-01-13	-355.08	expense	produce	Produce and ingredients restock
+2026-01-14	310.0	payout	bank_deposit	Square deposit to bank
+2026-01-14	329.7	sale	food_sales	Daily food truck sales
+2026-01-14	-8.57	expense	processing_fees	Square processing fees
+2026-01-14	-19.4	refund	refunds	Customer refund
+2026-01-15	321.13	payout	bank_deposit	Square deposit to bank
+2026-01-15	389.32	sale	food_sales	Daily food truck sales
+2026-01-15	-10.12	expense	processing_fees	Square processing fees
+2026-01-15	-24.93	refund	refunds	Customer refund
+2026-01-15	-340.0	expense	insurance	Monthly business insurance
+2026-01-16	379.2	payout	bank_deposit	Square deposit to bank
+2026-01-16	641.94	sale	food_sales	Daily food truck sales
+2026-01-16	-16.69	expense	processing_fees	Square processing fees
+2026-01-16	-22.43	refund	refunds	Customer refund
+2026-01-16	-441.9	expense	produce	Weekend produce and ingredients restock
+2026-01-17	625.25	payout	bank_deposit	Square deposit to bank
+2026-01-17	615.19	sale	food_sales	Daily food truck sales
+2026-01-17	-15.99	expense	processing_fees	Square processing fees
+2026-01-17	-14.66	refund	refunds	Customer refund
+2026-01-18	599.2	payout	bank_deposit	Square deposit to bank
+2026-01-18	647.2	sale	food_sales	Daily food truck sales
+2026-01-18	-16.83	expense	processing_fees	Square processing fees
+2026-01-18	-26.44	refund	refunds	Customer refund
+2026-01-19	630.37	payout	bank_deposit	Square deposit to bank
+2026-01-19	-94.88	expense	supplies	Paper goods, napkins, containers
+2026-01-20	323.25	sale	food_sales	Daily food truck sales
+2026-01-20	-8.4	expense	processing_fees	Square processing fees
+2026-01-20	-185.0	expense	propane	Monthly propane refill
+2026-01-20	-389.77	expense	produce	Produce and ingredients restock
+2026-01-21	314.85	payout	bank_deposit	Square deposit to bank
+2026-01-21	414.33	sale	food_sales	Daily food truck sales
+2026-01-21	-10.77	expense	processing_fees	Square processing fees
+2026-01-22	403.56	payout	bank_deposit	Square deposit to bank
+2026-01-22	374.2	sale	food_sales	Daily food truck sales
+2026-01-22	-9.73	expense	processing_fees	Square processing fees
+2026-01-22	-296.0	expense	maintenance	Generator maintenance
+2026-01-23	544.63	sale	food_sales	Daily food truck sales
+2026-01-23	-14.16	expense	processing_fees	Square processing fees
+2026-01-23	-442.17	expense	produce	Weekend produce and ingredients restock
+2026-01-24	364.47	payout	bank_deposit	Square deposit to bank
+2026-01-24	530.47	payout	bank_deposit	Square deposit to bank
+2026-01-24	773.56	sale	food_sales	Daily food truck sales
+2026-01-24	-20.11	expense	processing_fees	Square processing fees
+2026-01-24	-11.34	refund	refunds	Customer refund
+2026-01-25	753.45	payout	bank_deposit	Square deposit to bank
+2026-01-25	731.78	sale	food_sales	Daily food truck sales
+2026-01-25	-19.03	expense	processing_fees	Square processing fees
+2026-01-25	-14.73	refund	refunds	Customer refund
+2026-01-27	712.75	payout	bank_deposit	Square deposit to bank
+2026-01-27	332.13	sale	food_sales	Daily food truck sales
+2026-01-27	-8.64	expense	processing_fees	Square processing fees
+2026-01-27	-8.48	refund	refunds	Customer refund
+2026-01-27	-400.65	expense	produce	Produce and ingredients restock
+2026-01-28	323.49	payout	bank_deposit	Square deposit to bank
+2026-01-28	407.88	sale	food_sales	Daily food truck sales
+2026-01-28	-10.6	expense	processing_fees	Square processing fees
+2026-01-29	359.92	sale	food_sales	Daily food truck sales
+2026-01-29	-9.36	expense	processing_fees	Square processing fees
+2026-01-29	-12.6	refund	refunds	Customer refund
+2026-01-30	397.28	payout	bank_deposit	Square deposit to bank
+2026-01-30	591.35	sale	food_sales	Daily food truck sales
+2026-01-30	-15.38	expense	processing_fees	Square processing fees
+2026-01-30	-384.72	expense	produce	Weekend produce and ingredients restock
+2026-01-31	350.56	payout	bank_deposit	Square deposit to bank
+2026-01-31	575.97	payout	bank_deposit	Square deposit to bank
+2026-01-31	766.7	sale	food_sales	Daily food truck sales
+2026-01-31	-19.93	expense	processing_fees	Square processing fees
+2026-02-01	746.77	payout	bank_deposit	Square deposit to bank
+2026-02-01	578.02	sale	food_sales	Daily food truck sales
+2026-02-01	-15.03	expense	processing_fees	Square processing fees
+2026-02-01	-1800.0	expense	commissary_rent	Monthly commissary kitchen rent
+2026-02-03	562.99	payout	bank_deposit	Square deposit to bank
+2026-02-03	359.04	sale	food_sales	Daily food truck sales
+2026-02-03	-9.34	expense	processing_fees	Square processing fees
+2026-02-03	-12.35	refund	refunds	Customer refund
+2026-02-03	-358.82	expense	produce	Produce and ingredients restock
+2026-02-04	349.7	payout	bank_deposit	Square deposit to bank
+2026-02-04	369.6	sale	food_sales	Daily food truck sales
+2026-02-04	-9.61	expense	processing_fees	Square processing fees
+2026-02-05	325.35	sale	food_sales	Daily food truck sales
+2026-02-05	-8.46	expense	processing_fees	Square processing fees
+2026-02-05	-137.76	expense	supplies	Paper goods, napkins, containers
+2026-02-06	359.99	payout	bank_deposit	Square deposit to bank
+2026-02-06	316.89	payout	bank_deposit	Square deposit to bank
+2026-02-06	557.3	sale	food_sales	Daily food truck sales
+2026-02-06	-14.49	expense	processing_fees	Square processing fees
+2026-02-06	-442.35	expense	produce	Weekend produce and ingredients restock
+2026-02-07	542.81	payout	bank_deposit	Square deposit to bank
+2026-02-07	677.34	sale	food_sales	Daily food truck sales
