@@ -14,9 +14,9 @@ const _jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Cash Flow Copilot",
+  title: "Vista",
   description:
-    "AI-powered cash flow analysis for small business sellers. Understand your money in, money out, and weekly outlook.",
+    "A 30-day cash-flow checkup for small local businesses.",
 };
 
 export const viewport: Viewport = {
