@@ -2,28 +2,12 @@
 
 import { Suspense, useEffect, useState } from "react";
 import { useSearchParams } from "next/navigation";
+import { DEMO_DATA, type AnalysisData } from "../lib/demo-data";
 import { SellerHeader } from "@/components/seller-header";
 import { TransactionTable } from "@/components/transaction-table";
 import { AnalysisResults } from "@/components/analysis-results";
 import { Button } from "@/components/ui/button";
 import { Loader2, Sparkles } from "lucide-react";
-
-type AnalysisData = {
-  outlook: {
-    week: string;
-    expected_in: number;
-    expected_out: number;
-    summary: string;
-    tight: boolean;
-  }[];
-  insights: {
-    title: string;
-    insight: string;
-    suggested_action: string;
-    accentColor: "success" | "warning" | "info";
-  }[];
-  non_obvious_observation: string;
-};
 
 function PageContent() {
   const [analysisData, setAnalysisData] = useState<AnalysisData | null>(null);
@@ -49,10 +33,10 @@ function PageContent() {
 
   useEffect(() => {
     const isDemoMode = searchParams.get("demo") === "true";
-    if (isDemoMode && !analysisData && !loading) {
-      void handleAnalyze();
+    if (isDemoMode && !analysisData) {
+      setAnalysisData(DEMO_DATA);
     }
-  }, [searchParams, analysisData, loading]);
+  }, [searchParams, analysisData]);
 
   return (
     <div className="flex min-h-screen flex-col">
