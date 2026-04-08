@@ -1,9 +1,11 @@
 import Link from "next/link";
+import { Upload, LineChart, CalendarClock } from "lucide-react";
 import { Button } from "@/components/ui/button";
+
 export default function Page() {
   return (
     <div className="min-h-screen bg-[#f5f0eb]">
-      <main className="mx-auto flex min-h-screen w-full max-w-4xl items-center px-4 py-16 sm:px-6 lg:px-8">
+      <main className="mx-auto w-full max-w-4xl space-y-14 px-4 py-16 sm:px-6 lg:px-8">
         <section className="w-full rounded-2xl border border-black/5 bg-white/65 p-8 shadow-sm sm:p-10">
           <p className="text-xs font-medium uppercase tracking-[0.16em] text-[#7a5d45]/80">
             Vista
@@ -31,6 +33,48 @@ export default function Page() {
             </Link>
           </div>
         </section>
+
+        <section>
+          <p className="text-xs font-medium uppercase tracking-wider text-[#7a5d45]/70">
+            How it works
+          </p>
+          <div className="mt-6 grid gap-8 md:grid-cols-3">
+            <div className="flex flex-col gap-3">
+              <div className="flex h-9 w-9 items-center justify-center rounded-lg border border-black/5 bg-white/70 text-[#7a5d45]">
+                <Upload className="h-4 w-4" strokeWidth={1.75} />
+              </div>
+              <p className="text-sm font-medium text-[#3f2e21]">
+                Upload 90 days of transactions
+              </p>
+            </div>
+            <div className="flex flex-col gap-3">
+              <div className="flex h-9 w-9 items-center justify-center rounded-lg border border-black/5 bg-white/70 text-[#7a5d45]">
+                <LineChart className="h-4 w-4" strokeWidth={1.75} />
+              </div>
+              <p className="text-sm font-medium text-[#3f2e21]">
+                Vista finds the patterns
+              </p>
+            </div>
+            <div className="flex flex-col gap-3">
+              <div className="flex h-9 w-9 items-center justify-center rounded-lg border border-black/5 bg-white/70 text-[#7a5d45]">
+                <CalendarClock className="h-4 w-4" strokeWidth={1.75} />
+              </div>
+              <p className="text-sm font-medium text-[#3f2e21]">
+                See what&apos;s coming before it hits
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <blockquote className="rounded-xl border border-black/5 bg-white/50 px-6 py-5 shadow-sm sm:px-8 sm:py-6">
+          <p className="text-base leading-relaxed text-[#5a4636]">
+            &ldquo;I just say yes and figure it out. Which works until it
+            doesn&apos;t.&rdquo;
+          </p>
+          <footer className="mt-3 text-sm text-[#6b5543]">
+            — Food truck owner, Austin TX
+          </footer>
+        </blockquote>
       </main>
     </div>
   );
