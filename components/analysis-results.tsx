@@ -7,6 +7,9 @@ import {
   CheckCircle2,
   AlertTriangle,
   Eye,
+  Plug,
+  Smartphone,
+  Calendar,
 } from "lucide-react";
 
 type WeekOutlook = {
@@ -231,6 +234,53 @@ export function AnalysisResults({ data }: { data: AnalysisData }) {
           </div>
         </section>
       )}
+
+      {/* What's Next */}
+      <section>
+        <p className="mb-2 text-xs font-medium uppercase tracking-wider text-muted-foreground/60">
+          Coming Soon
+        </p>
+        <h3 className="mb-4 text-sm font-medium text-muted-foreground">
+          What we're building next
+        </h3>
+        <div className="grid grid-cols-1 gap-4 md:grid-cols-3">
+          <div className="rounded-lg border border-border/50 bg-muted/30 p-5 opacity-70">
+            <div className="mb-3 flex h-8 w-8 items-center justify-center rounded-full bg-muted">
+              <Plug className="h-4 w-4 text-muted-foreground" />
+            </div>
+            <h4 className="mb-1.5 text-sm font-semibold text-foreground/70">
+              Square Integration
+            </h4>
+            <p className="text-xs leading-relaxed text-muted-foreground">
+              Connect your Square account directly. No CSV export needed — Vista syncs automatically.
+            </p>
+          </div>
+
+          <div className="rounded-lg border border-border/50 bg-muted/30 p-5 opacity-70">
+            <div className="mb-3 flex h-8 w-8 items-center justify-center rounded-full bg-muted">
+              <Smartphone className="h-4 w-4 text-muted-foreground" />
+            </div>
+            <h4 className="mb-1.5 text-sm font-semibold text-foreground/70">
+              Real-Balance Widget
+            </h4>
+            <p className="text-xs leading-relaxed text-muted-foreground">
+              One number on your phone's home screen: your actual available balance after accounting for what's coming.
+            </p>
+          </div>
+
+          <div className="rounded-lg border border-border/50 bg-muted/30 p-5 opacity-70">
+            <div className="mb-3 flex h-8 w-8 items-center justify-center rounded-full bg-muted">
+              <Calendar className="h-4 w-4 text-muted-foreground" />
+            </div>
+            <h4 className="mb-1.5 text-sm font-semibold text-foreground/70">
+              Catering Decision Support
+            </h4>
+            <p className="text-xs leading-relaxed text-muted-foreground">
+              Before you say yes to a job, Vista tells you if the cash timing actually works.
+            </p>
+          </div>
+        </div>
+      </section>
     </div>
   );
 }
