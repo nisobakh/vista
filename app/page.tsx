@@ -1,143 +1,37 @@
-"use client";
-
-import { Suspense, useEffect, useState } from "react";
-import { useSearchParams } from "next/navigation";
-import { DEMO_DATA, type AnalysisData } from "../lib/demo-data";
-import { SellerHeader } from "@/components/seller-header";
-import { TransactionTable } from "@/components/transaction-table";
-import { AnalysisResults } from "@/components/analysis-results";
+import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import { Check, Loader2, Sparkles } from "lucide-react";
-
-function PageContent() {
-  const [analysisData, setAnalysisData] = useState<AnalysisData | null>(null);
-  const [loading, setLoading] = useState(false);
-  const [activeStep, setActiveStep] = useState(0);
-  const searchParams = useSearchParams();
-  const loadingSteps = [
-    "Reading 90 days of transactions...",
-    "Identifying recurring expense patterns...",
-    "Modeling your weekly cash position...",
-    "Generating your 4-week outlook...",
-  ];
-
-  async function handleAnalyze() {
-    try {
-      setLoading(true);
-
-      const res = await fetch("/api/analyze", {
-        method: "POST",
-      });
-
-      const data = await res.json();
-      setAnalysisData(data);
-    } catch (error) {
-      console.error("Analysis failed:", error);
-    } finally {
-      setLoading(false);
-    }
-  }
-
-  useEffect(() => {
-    const isDemoMode = searchParams.get("demo") === "true";
-    if (isDemoMode && !analysisData) {
-      setAnalysisData(DEMO_DATA);
-    }
-  }, [searchParams, analysisData]);
-
-  useEffect(() => {
-    if (!loading) {
-      setActiveStep(0);
-      return;
-    }
-
-    const timers = [
-      setTimeout(() => setActiveStep(1), 1200),
-      setTimeout(() => setActiveStep(2), 2400),
-      setTimeout(() => setActiveStep(3), 3600),
-    ];
-
-    return () => timers.forEach((timer) => clearTimeout(timer));
-  }, [loading]);
-
-  if (loading) {
-    return (
-      <div className="flex min-h-screen items-center justify-center bg-[#f5f0eb] px-6">
-        <div className="w-full max-w-xl rounded-2xl border border-black/5 bg-white/60 p-8 shadow-sm backdrop-blur-sm">
-          <div className="mb-4">
-            <p className="text-xs font-medium uppercase tracking-[0.16em] text-[#7a5d45]/80">
-              Vista
-            </p>
-          </div>
-          <div className="space-y-4">
-            {loadingSteps.slice(0, activeStep + 1).map((step, idx) => {
-              const isComplete = idx < activeStep;
-              const isCurrent = idx === activeStep;
-              return (
-                <div
-                  key={step}
-                  className={`flex items-center gap-3 transition-opacity ${
-                    isCurrent ? "opacity-100" : "opacity-80"
-                  }`}
-                >
-                  {isComplete ? (
-                    <span className="flex h-5 w-5 items-center justify-center rounded-full bg-emerald-100 text-emerald-600">
-                      <Check className="h-3.5 w-3.5" />
-                    </span>
-                  ) : (
-                    <Loader2 className="h-4.5 w-4.5 animate-spin text-[#7a5d45]" />
-                  )}
-                  <p
-                    className={`text-left text-sm ${
-                      isCurrent
-                        ? "font-medium text-[#3f2e21]"
-                        : "font-normal text-[#6c5644]"
-                    }`}
-                  >
-                    {step}
-                  </p>
-                </div>
-              );
-            })}
-          </div>
-        </div>
-      </div>
-    );
-  }
-
-  return (
-    <div className="flex min-h-screen flex-col">
-      <main className="mx-auto w-full max-w-4xl flex-1 px-4 py-10 sm:px-6 lg:px-8">
-        <div className="space-y-8">
-          <SellerHeader />
-          {analysisData && <AnalysisResults data={analysisData} />}
-          <TransactionTable />
-
-          {!analysisData && (
-            <div className="flex justify-center pt-2">
-              <Button
-                size="lg"
-                onClick={handleAnalyze}
-                disabled={loading}
-                className="h-12 w-full max-w-md gap-2 text-base font-semibold"
-              >
-                <>
-                  <Sparkles className="h-5 w-5" />
-                  Analyze My Cash Flow
-                </>
-              </Button>
-            </div>
-          )}
-        </div>
-      </main>
-    </div>
-  );
-}
-
 export default function Page() {
   return (
-    <Suspense fallback={null}>
-      <PageContent />
-    </Suspense>
+    <div className="min-h-screen bg-[#f5f0eb]">
+      <main className="mx-auto flex min-h-screen w-full max-w-4xl items-center px-4 py-16 sm:px-6 lg:px-8">
+        <section className="w-full rounded-2xl border border-black/5 bg-white/65 p-8 shadow-sm sm:p-10">
+          <p className="text-xs font-medium uppercase tracking-[0.16em] text-[#7a5d45]/80">
+            Vista
+          </p>
+          <h1 className="mt-3 text-3xl font-semibold tracking-tight text-[#3f2e21] sm:text-4xl">
+            See what your bank balance isn&apos;t telling you
+          </h1>
+          <p className="mt-4 max-w-2xl text-base leading-relaxed text-[#5a4636]">
+            Vista looks at your last 90 days and tells you what&apos;s coming
+            financially — before it hits.
+          </p>
+          <p className="mt-3 text-sm text-[#6b5543]">
+            Built for food truck owners and small local businesses.
+          </p>
+
+          <div className="mt-8 flex flex-col items-start gap-4 sm:flex-row sm:items-center">
+            <Button asChild size="lg" className="h-12 px-6 text-base font-semibold">
+              <Link href="/dashboard">Check My Cash Flow →</Link>
+            </Button>
+            <Link
+              href="/dashboard?demo=true"
+              className="text-sm font-medium text-[#5a4636] underline-offset-4 hover:underline"
+            >
+              See a live demo →
+            </Link>
+          </div>
+        </section>
+      </main>
+    </div>
   );
 }
