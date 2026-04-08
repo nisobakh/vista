@@ -65,16 +65,6 @@ export default function Page() {
             </div>
           </div>
         </section>
-
-        <blockquote className="rounded-xl border border-black/5 bg-white/50 px-6 py-5 shadow-sm sm:px-8 sm:py-6">
-          <p className="text-base leading-relaxed text-[#5a4636]">
-            &ldquo;I just say yes and figure it out. Which works until it
-            doesn&apos;t.&rdquo;
-          </p>
-          <footer className="mt-3 text-sm text-[#6b5543]">
-            — Food truck owner, Austin TX
-          </footer>
-        </blockquote>
       </main>
     </div>
   );
