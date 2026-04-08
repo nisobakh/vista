@@ -110,6 +110,7 @@ function PageContent() {
       <main className="mx-auto w-full max-w-4xl flex-1 px-4 py-10 sm:px-6 lg:px-8">
         <div className="space-y-8">
           <SellerHeader />
+          {analysisData && <AnalysisResults data={analysisData} />}
           <TransactionTable />
 
           {!analysisData && (
@@ -127,8 +128,6 @@ function PageContent() {
               </Button>
             </div>
           )}
-
-          {analysisData && <AnalysisResults data={analysisData} />}
         </div>
       </main>
     </div>
