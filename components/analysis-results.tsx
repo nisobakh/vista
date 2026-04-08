@@ -150,13 +150,13 @@ export function AnalysisResults({ data }: { data: AnalysisData }) {
 
     if (typeof obs === "string") {
       return {
-        title: "Non-Obvious Observation",
+        title: "Something You Might Have Missed",
         body: obs,
       };
     }
 
     return {
-      title: obs.title ?? "Non-Obvious Observation",
+      title: obs.title ?? "Something You Might Have Missed",
       body: obs.body ?? "",
     };
   };
@@ -189,7 +189,7 @@ export function AnalysisResults({ data }: { data: AnalysisData }) {
         </div>
       </section>
 
-      {/* Non-Obvious Observation */}
+      {/* Something You Might Have Missed */}
       {observation && (
         <section>
           <div className="relative overflow-hidden rounded-lg border border-info/20 bg-gradient-to-br from-info-bg via-card to-info-bg p-6 shadow-sm">

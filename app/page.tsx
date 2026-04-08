@@ -64,6 +64,11 @@ function PageContent() {
     return (
       <div className="flex min-h-screen items-center justify-center bg-[#f5f0eb] px-6">
         <div className="w-full max-w-xl rounded-2xl border border-black/5 bg-white/60 p-8 shadow-sm backdrop-blur-sm">
+          <div className="mb-4">
+            <p className="text-xs font-medium uppercase tracking-[0.16em] text-[#7a5d45]/80">
+              Vista
+            </p>
+          </div>
           <div className="space-y-4">
             {loadingSteps.slice(0, activeStep + 1).map((step, idx) => {
               const isComplete = idx < activeStep;
