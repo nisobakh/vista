@@ -8,11 +8,12 @@ import { SellerHeader } from "@/components/seller-header";
 import { TransactionTable } from "@/components/transaction-table";
 import { AnalysisResults } from "@/components/analysis-results";
 import { Button } from "@/components/ui/button";
-import { Check, Loader2, Sparkles } from "lucide-react";
+import { AlertTriangle, Check, Loader2, Sparkles } from "lucide-react";
 
 function DashboardContent() {
   const [analysisData, setAnalysisData] = useState<AnalysisData | null>(null);
   const [loading, setLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
   const [activeStep, setActiveStep] = useState(0);
   const searchParams = useSearchParams();
   const loadingSteps = [
@@ -23,6 +24,7 @@ function DashboardContent() {
   ];
 
   async function handleAnalyze() {
+    setError(null);
     try {
       setLoading(true);
 
@@ -30,10 +32,20 @@ function DashboardContent() {
         method: "POST",
       });
 
+      if (!res.ok) {
+        setError(
+          "Something went wrong analyzing your data. Please try again."
+        );
+        return;
+      }
+
       const data = await res.json();
       setAnalysisData(data);
-    } catch (error) {
-      console.error("Analysis failed:", error);
+    } catch (err) {
+      console.error("Analysis failed:", err);
+      setError(
+        "Something went wrong analyzing your data. Please try again."
+      );
     } finally {
       setLoading(false);
     }
@@ -115,7 +127,29 @@ function DashboardContent() {
           {analysisData && <AnalysisResults data={analysisData} />}
           <TransactionTable />
 
-          {!analysisData && (
+          {error && (
+            <div className="flex justify-center pt-2">
+              <div className="w-full max-w-md rounded-2xl border border-amber-200/60 bg-amber-50/50 px-6 py-6 text-center shadow-sm">
+                <div className="mx-auto flex h-10 w-10 items-center justify-center rounded-full bg-amber-100/80 text-amber-800">
+                  <AlertTriangle className="h-5 w-5" strokeWidth={1.75} />
+                </div>
+                <p className="mt-4 text-sm leading-relaxed text-[#5a4636]">
+                  {error}
+                </p>
+                <Button
+                  className="mt-5 h-10 w-full max-w-xs font-semibold"
+                  onClick={() => {
+                    setError(null);
+                    void handleAnalyze();
+                  }}
+                >
+                  Try Again
+                </Button>
+              </div>
+            </div>
+          )}
+
+          {!analysisData && !error && (
             <div className="flex justify-center pt-2">
               <Button
                 size="lg"
