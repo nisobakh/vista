@@ -23,7 +23,7 @@ export default function Page() {
 
           <div className="mt-8 flex flex-col items-start gap-4 sm:flex-row sm:items-center">
             <Button asChild size="lg" className="h-12 px-6 text-base font-semibold">
-              <Link href="/dashboard">Check My Cash Flow →</Link>
+              <Link href="/onboard">Check My Cash Flow →</Link>
             </Button>
             <Link
               href="/dashboard?demo=true"
