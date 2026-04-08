@@ -144,6 +144,16 @@ function InsightCard({ insight }: { insight: Insight }) {
 export function AnalysisResults({ data }: { data: AnalysisData }) {
   if (!data) return null;
 
+  const firstTightWeek = data.outlook?.find((week) => week.tight);
+  const decisionMessage = firstTightWeek
+    ? `${firstTightWeek.week} looks tight. Your expenses are projected to exceed income by ${formatMoney(
+        Math.max(
+          0,
+          (firstTightWeek.expected_out ?? 0) - (firstTightWeek.expected_in ?? 0)
+        )
+      )}. Consider delaying any non-essential purchases until the following week.`
+    : "You're in good shape this month. No major cash crunches ahead based on your patterns.";
+
   const renderNonObvious = () => {
     const obs = data.non_obvious_observation;
     if (!obs) return null;
@@ -165,6 +175,18 @@ export function AnalysisResults({ data }: { data: AnalysisData }) {
 
   return (
     <div className="animate-in fade-in slide-in-from-bottom-4 space-y-10 duration-500">
+      {/* Decision Prompt */}
+      <section>
+        <div className="rounded-lg border border-amber-300/40 bg-amber-50/60 p-5 shadow-sm">
+          <p className="mb-1 text-xs font-semibold uppercase tracking-wide text-amber-900/90">
+            Your most important decision this week
+          </p>
+          <p className="text-sm leading-relaxed text-amber-950/80">
+            {decisionMessage}
+          </p>
+        </div>
+      </section>
+
       {/* Weekly Outlook */}
       <section>
         <h3 className="mb-4 text-sm font-medium uppercase tracking-wider text-muted-foreground">
