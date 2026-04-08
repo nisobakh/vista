@@ -123,7 +123,7 @@ function DashboardContent() {
               >
                 <>
                   <Sparkles className="h-5 w-5" />
-                  Analyze My Cash Flow
+                  Generate My Outlook
                 </>
               </Button>
             </div>

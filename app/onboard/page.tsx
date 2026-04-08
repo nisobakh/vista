@@ -50,9 +50,9 @@ function OptionCard({
       type="button"
       onClick={onSelect}
       className={cn(
-        "w-full rounded-xl border px-4 py-3.5 text-left text-sm font-medium transition-colors",
+        "w-full rounded-xl border px-4 py-3.5 text-left text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#3d3530]/35 focus-visible:ring-offset-2 focus-visible:ring-offset-[#f5f0eb]",
         selected
-          ? "border-[#7a5d45] bg-white shadow-sm ring-2 ring-[#7a5d45]/20 text-[#3f2e21]"
+          ? "border-[#3d3530] bg-white shadow-sm text-[#3f2e21]"
           : "border-black/5 bg-white/60 text-[#5a4636] hover:border-black/10 hover:bg-white/80"
       )}
     >
@@ -77,7 +77,7 @@ function OptionalOtherField({
         placeholder="Tell us more (optional)"
         value={value}
         onChange={(e) => onChange(e.target.value)}
-        className="h-10 border-black/10 bg-white/80 text-sm text-[#3f2e21] placeholder:text-[#6b5543]/70"
+        className="h-10 border-black/10 bg-white/80 text-sm text-[#3f2e21] placeholder:text-[#6b5543]/70 focus-visible:border-[#3d3530]/50 focus-visible:ring-[#3d3530]/30"
       />
     </div>
   );
