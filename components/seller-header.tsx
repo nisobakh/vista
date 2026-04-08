@@ -16,14 +16,20 @@ export function SellerHeader() {
       </div>
 
       {/* Demo badge */}
-      <div className="flex items-center gap-2">
-        <Badge
-          variant="secondary"
-          className="gap-1.5 rounded-full px-3 py-1 text-xs font-medium text-muted-foreground"
-        >
-          <Sparkles className="h-3 w-3" />
-          {"Demo: Maria\u2019s Tacos \u2014 Food Truck, Austin TX"}
-        </Badge>
+      <div className="space-y-2">
+        <div className="flex items-center gap-2">
+          <Badge
+            variant="secondary"
+            className="gap-1.5 rounded-full px-3 py-1 text-xs font-medium text-muted-foreground"
+          >
+            <Sparkles className="h-3 w-3" />
+            {"Demo: Maria\u2019s Tacos \u2014 Food Truck, Austin TX"}
+          </Badge>
+        </div>
+        <p className="max-w-xl text-xs leading-relaxed text-muted-foreground">
+          Live product uses a CSV export from Square or your bank app. Square
+          API integration coming in v2.
+        </p>
       </div>
     </header>
   );
