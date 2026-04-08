@@ -2,7 +2,7 @@
 
 import { Suspense, useEffect, useState } from "react";
 import { useSearchParams } from "next/navigation";
-import { DEMO_DATA, type AnalysisData } from "../../lib/demo-data";
+import { DEMO_DATA, DEMO_DATA_CATERING, type AnalysisData } from "../../lib/demo-data";
 import { DashboardSummaryBar } from "@/components/dashboard-summary-bar";
 import { SellerHeader } from "@/components/seller-header";
 import { TransactionTable } from "@/components/transaction-table";
@@ -15,7 +15,9 @@ function DashboardContent() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [activeStep, setActiveStep] = useState(0);
+  const [activeDemo, setActiveDemo] = useState<"maria" | "carlos">("maria");
   const searchParams = useSearchParams();
+
   const loadingSteps = [
     "Reading 90 days of transactions...",
     "Identifying recurring expense patterns...",
@@ -53,10 +55,10 @@ function DashboardContent() {
 
   useEffect(() => {
     const isDemoMode = searchParams.get("demo") === "true";
-    if (isDemoMode && !analysisData) {
-      setAnalysisData(DEMO_DATA);
+    if (isDemoMode) {
+      setAnalysisData(activeDemo === "maria" ? DEMO_DATA : DEMO_DATA_CATERING);
     }
-  }, [searchParams, analysisData]);
+  }, [searchParams, activeDemo]);
 
   useEffect(() => {
     if (!loading) {
@@ -72,6 +74,8 @@ function DashboardContent() {
 
     return () => timers.forEach((timer) => clearTimeout(timer));
   }, [loading]);
+
+  const isDemoMode = searchParams.get("demo") === "true";
 
   if (loading) {
     return (
@@ -123,6 +127,36 @@ function DashboardContent() {
       <main className="mx-auto w-full max-w-4xl flex-1 px-4 py-10 sm:px-6 lg:px-8">
         <div className="space-y-8">
           <SellerHeader />
+
+          {/* Demo switcher — only visible in demo mode */}
+          {isDemoMode && (
+            <div className="flex items-center gap-2 rounded-lg border border-border/50 bg-muted/30 p-3">
+              <span className="text-xs text-muted-foreground mr-2">
+                Try a different business:
+              </span>
+              <button
+                onClick={() => setActiveDemo("maria")}
+                className={`rounded-md px-3 py-1.5 text-xs font-medium transition-colors ${
+                  activeDemo === "maria"
+                    ? "bg-white border border-border shadow-sm text-foreground"
+                    : "text-muted-foreground hover:text-foreground"
+                }`}
+              >
+                Maria's Tacos — Food Truck
+              </button>
+              <button
+                onClick={() => setActiveDemo("carlos")}
+                className={`rounded-md px-3 py-1.5 text-xs font-medium transition-colors ${
+                  activeDemo === "carlos"
+                    ? "bg-white border border-border shadow-sm text-foreground"
+                    : "text-muted-foreground hover:text-foreground"
+                }`}
+              >
+                Carlos — Catering
+              </button>
+            </div>
+          )}
+
           <DashboardSummaryBar />
           {analysisData && <AnalysisResults data={analysisData} />}
           <TransactionTable />
