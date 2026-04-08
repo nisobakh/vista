@@ -1,6 +1,7 @@
 "use client";
 
-import { useState } from "react";
+import { Suspense, useEffect, useState } from "react";
+import { useSearchParams } from "next/navigation";
 import { SellerHeader } from "@/components/seller-header";
 import { TransactionTable } from "@/components/transaction-table";
 import { AnalysisResults } from "@/components/analysis-results";
@@ -24,9 +25,10 @@ type AnalysisData = {
   non_obvious_observation: string;
 };
 
-export default function Page() {
+function PageContent() {
   const [analysisData, setAnalysisData] = useState<AnalysisData | null>(null);
   const [loading, setLoading] = useState(false);
+  const searchParams = useSearchParams();
 
   async function handleAnalyze() {
     try {
@@ -44,6 +46,13 @@ export default function Page() {
       setLoading(false);
     }
   }
+
+  useEffect(() => {
+    const isDemoMode = searchParams.get("demo") === "true";
+    if (isDemoMode && !analysisData && !loading) {
+      void handleAnalyze();
+    }
+  }, [searchParams, analysisData, loading]);
 
   return (
     <div className="flex min-h-screen flex-col">
@@ -79,5 +88,13 @@ export default function Page() {
         </div>
       </main>
     </div>
+  );
+}
+
+export default function Page() {
+  return (
+    <Suspense fallback={null}>
+      <PageContent />
+    </Suspense>
   );
 }
