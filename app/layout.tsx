@@ -3,6 +3,8 @@ import type { Metadata, Viewport } from "next";
 import { DM_Sans, JetBrains_Mono } from "next/font/google";
 
 import "./globals.css";
+import { Analytics } from "@vercel/analytics/react";
+
 
 const _dmSans = DM_Sans({
   subsets: ["latin"],
@@ -34,6 +36,7 @@ export default function RootLayout({
         className={`${_dmSans.variable} ${_jetbrainsMono.variable} font-sans antialiased`}
       >
         {children}
+        <Analytics />
       </body>
     </html>
   );
