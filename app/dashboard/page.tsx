@@ -3,6 +3,7 @@
 import { Suspense, useEffect, useState } from "react";
 import { useSearchParams } from "next/navigation";
 import { DEMO_DATA, type AnalysisData } from "../../lib/demo-data";
+import { DashboardSummaryBar } from "@/components/dashboard-summary-bar";
 import { SellerHeader } from "@/components/seller-header";
 import { TransactionTable } from "@/components/transaction-table";
 import { AnalysisResults } from "@/components/analysis-results";
@@ -110,6 +111,7 @@ function DashboardContent() {
       <main className="mx-auto w-full max-w-4xl flex-1 px-4 py-10 sm:px-6 lg:px-8">
         <div className="space-y-8">
           <SellerHeader />
+          <DashboardSummaryBar />
           {analysisData && <AnalysisResults data={analysisData} />}
           <TransactionTable />
 
