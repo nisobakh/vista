@@ -20,7 +20,7 @@ const STEP2_OPTIONS = [
   "I never know if I can cover next week's expenses",
   "Big bills hit and I'm not ready for them",
   "My income is too unpredictable to plan around",
-  "I spend more at Restaurant Depot than I realize",
+  "I spend more on supplies than I plan to",
   OTHER,
 ] as const;
 
@@ -50,10 +50,10 @@ function OptionCard({
       type="button"
       onClick={onSelect}
       className={cn(
-        "w-full rounded-xl border px-4 py-3.5 text-left text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#3d3530]/35 focus-visible:ring-offset-2 focus-visible:ring-offset-[#f5f0eb]",
+        "w-full rounded-xl border px-4 py-3.5 text-left text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-0",
         selected
-          ? "border-[#3d3530] bg-white shadow-sm text-[#3f2e21]"
-          : "border-black/5 bg-white/60 text-[#5a4636] hover:border-black/10 hover:bg-white/80"
+          ? "border-[#3d3530] bg-white text-[#3f2e21] shadow-none"
+          : "border-black/5 bg-white/60 text-[#5a4636] hover:border-black/10 hover:bg-white/80 focus-visible:ring-2 focus-visible:ring-[#3d3530]/35 focus-visible:ring-offset-2 focus-visible:ring-offset-[#f5f0eb]"
       )}
     >
       {label}
