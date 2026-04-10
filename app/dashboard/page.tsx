@@ -29,25 +29,16 @@ function DashboardContent() {
     setError(null);
     try {
       setLoading(true);
-
-      const res = await fetch("/api/analyze", {
-        method: "POST",
-      });
-
+      const res = await fetch("/api/analyze", { method: "POST" });
       if (!res.ok) {
-        setError(
-          "Something went wrong analyzing your data. Please try again."
-        );
+        setError("Something went wrong analyzing your data. Please try again.");
         return;
       }
-
       const data = await res.json();
       setAnalysisData(data);
     } catch (err) {
       console.error("Analysis failed:", err);
-      setError(
-        "Something went wrong analyzing your data. Please try again."
-      );
+      setError("Something went wrong analyzing your data. Please try again.");
     } finally {
       setLoading(false);
     }
@@ -65,13 +56,11 @@ function DashboardContent() {
       setActiveStep(0);
       return;
     }
-
     const timers = [
       setTimeout(() => setActiveStep(1), 1200),
       setTimeout(() => setActiveStep(2), 2400),
       setTimeout(() => setActiveStep(3), 3600),
     ];
-
     return () => timers.forEach((timer) => clearTimeout(timer));
   }, [loading]);
 
@@ -104,13 +93,7 @@ function DashboardContent() {
                   ) : (
                     <Loader2 className="h-4.5 w-4.5 animate-spin text-[#7a5d45]" />
                   )}
-                  <p
-                    className={`text-left text-sm ${
-                      isCurrent
-                        ? "font-medium text-[#3f2e21]"
-                        : "font-normal text-[#6c5644]"
-                    }`}
-                  >
+                  <p className={`text-left text-sm ${isCurrent ? "font-medium text-[#3f2e21]" : "font-normal text-[#6c5644]"}`}>
                     {step}
                   </p>
                 </div>
@@ -130,13 +113,13 @@ function DashboardContent() {
 
           {/* Demo switcher — only visible in demo mode */}
           {isDemoMode && (
-            <div className="flex items-center gap-2 rounded-lg border border-border/50 bg-muted/30 p-3">
-              <span className="text-xs text-muted-foreground mr-2">
+            <div className="flex flex-wrap items-center gap-2 rounded-lg border border-border/50 bg-muted/30 p-3">
+              <span className="text-xs text-muted-foreground mr-2 shrink-0">
                 Try a different business:
               </span>
               <button
                 onClick={() => setActiveDemo("maria")}
-                className={`rounded-md px-3 py-1.5 text-xs font-medium transition-colors ${
+                className={`rounded-md px-3 py-2 text-xs font-medium transition-colors ${
                   activeDemo === "maria"
                     ? "bg-white border border-border shadow-sm text-foreground"
                     : "text-muted-foreground hover:text-foreground"
@@ -146,7 +129,7 @@ function DashboardContent() {
               </button>
               <button
                 onClick={() => setActiveDemo("carlos")}
-                className={`rounded-md px-3 py-1.5 text-xs font-medium transition-colors ${
+                className={`rounded-md px-3 py-2 text-xs font-medium transition-colors ${
                   activeDemo === "carlos"
                     ? "bg-white border border-border shadow-sm text-foreground"
                     : "text-muted-foreground hover:text-foreground"
