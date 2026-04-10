@@ -50,7 +50,7 @@ function OptionCard({
       type="button"
       onClick={onSelect}
       className={cn(
-        "w-full rounded-xl border px-4 py-3.5 text-left text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-0",
+        "w-full min-h-[48px] rounded-xl border px-4 py-3.5 text-left text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-0",
         selected
           ? "border-[#3d3530] bg-white text-[#3f2e21] shadow-none"
           : "border-black/5 bg-white/60 text-[#5a4636] hover:border-black/10 hover:bg-white/80 focus-visible:ring-2 focus-visible:ring-[#3d3530]/35 focus-visible:ring-offset-2 focus-visible:ring-offset-[#f5f0eb]"
