@@ -1,11 +1,3 @@
-import {
-  Table,
-  TableBody,
-  TableCell,
-  TableHead,
-  TableHeader,
-  TableRow,
-} from "@/components/ui/table";
 import { cn } from "@/lib/utils";
 
 type Transaction = {
@@ -101,52 +93,59 @@ function formatCategory(category: string) {
     .join(" ");
 }
 
+function formatDate(date: string) {
+  const d = new Date(date);
+  return d.toLocaleDateString("en-US", { month: "short", day: "numeric" });
+}
+
 export function TransactionTable() {
   return (
     <section>
       <h2 className="mb-3 text-sm font-medium uppercase tracking-wider text-muted-foreground">
         Recent Transactions
       </h2>
-      <div className="overflow-hidden rounded-lg border border-border bg-card shadow-sm">
+
+      {/* Desktop table — hidden on mobile */}
+      <div className="hidden sm:block overflow-hidden rounded-lg border border-border bg-card shadow-sm">
         <div className="max-h-[420px] overflow-y-auto">
-          <Table>
-            <TableHeader>
-              <TableRow className="bg-muted/40 hover:bg-muted/40">
-                <TableHead className="h-9 w-[100px] text-[11px] font-semibold uppercase tracking-wider text-muted-foreground">
+          <table className="w-full">
+            <thead>
+              <tr className="bg-muted/40">
+                <th className="h-9 px-4 text-left text-[11px] font-semibold uppercase tracking-wider text-muted-foreground w-[100px]">
                   Date
-                </TableHead>
-                <TableHead className="h-9 w-[110px] text-right text-[11px] font-semibold uppercase tracking-wider text-muted-foreground">
+                </th>
+                <th className="h-9 px-4 text-right text-[11px] font-semibold uppercase tracking-wider text-muted-foreground w-[110px]">
                   Amount
-                </TableHead>
-                <TableHead className="h-9 w-[80px] text-[11px] font-semibold uppercase tracking-wider text-muted-foreground">
+                </th>
+                <th className="h-9 px-4 text-left text-[11px] font-semibold uppercase tracking-wider text-muted-foreground w-[80px]">
                   Type
-                </TableHead>
-                <TableHead className="h-9 w-[120px] text-[11px] font-semibold uppercase tracking-wider text-muted-foreground">
+                </th>
+                <th className="h-9 px-4 text-left text-[11px] font-semibold uppercase tracking-wider text-muted-foreground w-[120px]">
                   Category
-                </TableHead>
-                <TableHead className="h-9 text-[11px] font-semibold uppercase tracking-wider text-muted-foreground">
+                </th>
+                <th className="h-9 px-4 text-left text-[11px] font-semibold uppercase tracking-wider text-muted-foreground">
                   Description
-                </TableHead>
-              </TableRow>
-            </TableHeader>
-            <TableBody>
+                </th>
+              </tr>
+            </thead>
+            <tbody>
               {transactions.map((tx, i) => (
-                <TableRow
+                <tr
                   key={`${tx.date}-${tx.amount}-${i}`}
-                  className="transition-colors hover:bg-muted/30"
+                  className="border-t border-border/50 transition-colors hover:bg-muted/30"
                 >
-                  <TableCell className="py-2.5 font-mono text-xs text-muted-foreground">
+                  <td className="px-4 py-2.5 font-mono text-xs text-muted-foreground">
                     {tx.date}
-                  </TableCell>
-                  <TableCell
+                  </td>
+                  <td
                     className={cn(
-                      "py-2.5 text-right font-mono text-sm font-semibold",
+                      "px-4 py-2.5 text-right font-mono text-sm font-semibold",
                       tx.amount >= 0 ? "text-success" : "text-destructive"
                     )}
                   >
                     {formatAmount(tx.amount)}
-                  </TableCell>
-                  <TableCell className="py-2.5">
+                  </td>
+                  <td className="px-4 py-2.5">
                     <span
                       className={cn(
                         "inline-block rounded-full px-2 py-0.5 text-[11px] font-medium",
@@ -157,18 +156,60 @@ export function TransactionTable() {
                     >
                       {tx.type}
                     </span>
-                  </TableCell>
-                  <TableCell className="py-2.5 text-xs font-medium text-foreground">
+                  </td>
+                  <td className="px-4 py-2.5 text-xs font-medium text-foreground">
                     {formatCategory(tx.category)}
-                  </TableCell>
-                  <TableCell className="py-2.5 text-xs text-muted-foreground">
+                  </td>
+                  <td className="px-4 py-2.5 text-xs text-muted-foreground">
                     {tx.description}
-                  </TableCell>
-                </TableRow>
+                  </td>
+                </tr>
               ))}
-            </TableBody>
-          </Table>
+            </tbody>
+          </table>
         </div>
+      </div>
+
+      {/* Mobile card layout — hidden on desktop */}
+      <div className="sm:hidden space-y-2">
+        {transactions.map((tx, i) => (
+          <div
+            key={`${tx.date}-${tx.amount}-${i}`}
+            className="rounded-lg border border-border bg-card px-4 py-3 shadow-sm"
+          >
+            <div className="flex items-center justify-between">
+              <div className="flex items-center gap-2">
+                <span
+                  className={cn(
+                    "inline-block rounded-full px-2 py-0.5 text-[11px] font-medium",
+                    tx.type === "sale"
+                      ? "bg-success-bg text-success"
+                      : "bg-destructive/10 text-destructive"
+                  )}
+                >
+                  {tx.type}
+                </span>
+                <span className="text-xs font-medium text-foreground">
+                  {formatCategory(tx.category)}
+                </span>
+              </div>
+              <span
+                className={cn(
+                  "font-mono text-sm font-semibold",
+                  tx.amount >= 0 ? "text-success" : "text-destructive"
+                )}
+              >
+                {formatAmount(tx.amount)}
+              </span>
+            </div>
+            <div className="mt-1.5 flex items-center justify-between">
+              <p className="text-xs text-muted-foreground">{tx.description}</p>
+              <p className="ml-3 shrink-0 font-mono text-xs text-muted-foreground">
+                {formatDate(tx.date)}
+              </p>
+            </div>
+          </div>
+        ))}
       </div>
     </section>
   );
