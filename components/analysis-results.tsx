@@ -124,7 +124,7 @@ function InsightCard({ insight }: { insight: Insight }) {
   return (
     <div
       className={cn(
-        "rounded-lg border border-border border-l-4 bg-card p-5 shadow-sm",
+        "rounded-lg border border-border border-l-4 bg-card p-4 sm:p-5 shadow-sm",
         accentBorderMap[insight.accentColor]
       )}
     >
@@ -152,7 +152,8 @@ export function AnalysisResults({ data }: { data: AnalysisData }) {
     ? `${firstTightWeek.week} looks tight. Your expenses are projected to exceed income by ${formatMoney(
         Math.max(
           0,
-          (firstTightWeek.expected_out ?? 0) - (firstTightWeek.expected_in ?? 0)
+          (firstTightWeek.expected_out ?? 0) -
+            (firstTightWeek.expected_in ?? 0)
         )
       )}. Consider delaying any non-essential purchases until the following week.`
     : "You're in good shape this month. No major cash crunches ahead based on your patterns.";
@@ -160,14 +161,9 @@ export function AnalysisResults({ data }: { data: AnalysisData }) {
   const renderNonObvious = () => {
     const obs = data.non_obvious_observation;
     if (!obs) return null;
-
     if (typeof obs === "string") {
-      return {
-        title: "Something You Might Have Missed",
-        body: obs,
-      };
+      return { title: "Something You Might Have Missed", body: obs };
     }
-
     return {
       title: obs.title ?? "Something You Might Have Missed",
       body: obs.body ?? "",
@@ -178,9 +174,10 @@ export function AnalysisResults({ data }: { data: AnalysisData }) {
 
   return (
     <div className="animate-in fade-in slide-in-from-bottom-4 space-y-10 duration-500">
+
       {/* Decision Prompt */}
       <section>
-        <div className="rounded-lg border border-amber-300/40 bg-amber-50/60 p-5 shadow-sm">
+        <div className="rounded-lg border border-amber-300/40 bg-amber-50/60 px-4 py-4 sm:px-5 sm:py-5 shadow-sm">
           <p className="mb-1 text-xs font-semibold uppercase tracking-wide text-amber-900/90">
             Your most important decision this week
           </p>
@@ -217,15 +214,13 @@ export function AnalysisResults({ data }: { data: AnalysisData }) {
       {/* Something You Might Have Missed */}
       {observation && (
         <section>
-          <div className="relative overflow-hidden rounded-lg border border-info/20 bg-gradient-to-br from-info-bg via-card to-info-bg p-6 shadow-sm">
+          <div className="relative overflow-hidden rounded-lg border border-info/20 bg-gradient-to-br from-info-bg via-card to-info-bg px-4 py-5 sm:p-6 shadow-sm">
             <div className="relative">
               <div className="mb-3 flex items-center gap-2.5">
-                <div className="flex h-7 w-7 items-center justify-center rounded-full bg-info/10">
+                <div className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-info/10">
                   <Eye className="h-3.5 w-3.5 text-info" />
                 </div>
-                <h4 className="text-sm font-semibold">
-                  {observation.title}
-                </h4>
+                <h4 className="text-sm font-semibold">{observation.title}</h4>
               </div>
               <p className="text-sm leading-relaxed text-muted-foreground">
                 {observation.body}
@@ -244,7 +239,7 @@ export function AnalysisResults({ data }: { data: AnalysisData }) {
           What we're building next
         </h3>
         <div className="grid grid-cols-1 gap-4 md:grid-cols-3">
-          <div className="rounded-lg border border-border/50 bg-muted/30 p-5 opacity-70">
+          <div className="rounded-lg border border-border/50 bg-muted/30 p-4 sm:p-5 opacity-70">
             <div className="mb-3 flex h-8 w-8 items-center justify-center rounded-full bg-muted">
               <Plug className="h-4 w-4 text-muted-foreground" />
             </div>
@@ -256,7 +251,7 @@ export function AnalysisResults({ data }: { data: AnalysisData }) {
             </p>
           </div>
 
-          <div className="rounded-lg border border-border/50 bg-muted/30 p-5 opacity-70">
+          <div className="rounded-lg border border-border/50 bg-muted/30 p-4 sm:p-5 opacity-70">
             <div className="mb-3 flex h-8 w-8 items-center justify-center rounded-full bg-muted">
               <Smartphone className="h-4 w-4 text-muted-foreground" />
             </div>
@@ -268,7 +263,7 @@ export function AnalysisResults({ data }: { data: AnalysisData }) {
             </p>
           </div>
 
-          <div className="rounded-lg border border-border/50 bg-muted/30 p-5 opacity-70">
+          <div className="rounded-lg border border-border/50 bg-muted/30 p-4 sm:p-5 opacity-70">
             <div className="mb-3 flex h-8 w-8 items-center justify-center rounded-full bg-muted">
               <Calendar className="h-4 w-4 text-muted-foreground" />
             </div>
