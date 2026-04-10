@@ -45,20 +45,25 @@ The analysis quality comes entirely from prompt architecture — not model fine-
 ---
 
 ## Technical architecture
+```
 app/
 ├── page.tsx              # Landing page
 ├── onboard/page.tsx      # 4-step onboarding flow
 ├── dashboard/page.tsx    # Main product dashboard
 ├── widget/page.tsx       # Real-balance widget preview
 └── api/analyze/route.ts  # GPT-4o analysis endpoint
+
 lib/
 ├── demo-data.ts          # Static fixture data (Maria's Tacos + Carlos Catering)
 └── maria-transactions.ts # CSV parser + financial calculations
+
 components/
-├── analysis-results.tsx  # 4-week outlook, insights, observation, roadmap
+├── analysis-results.tsx       # 4-week outlook, insights, observation, roadmap
 ├── dashboard-summary-bar.tsx  # Real-time summary bar (calculated from CSV)
-├── seller-header.tsx     # Business identity header
-└── transaction-table.tsx # Responsive transaction table
+├── seller-header.tsx          # Business identity header
+└── transaction-table.tsx      # Responsive transaction table
+```
+
 **Stack:** Next.js 14, TypeScript, Tailwind CSS, GPT-4o, Vercel
 
 **Key technical decisions:**
@@ -72,19 +77,22 @@ components/
 ---
 
 ## Data flow
+```
 User uploads CSV (or demo loads fixture data)
-↓
+        ↓
 Transaction table renders from parsed CSV
-↓
+        ↓
 User clicks "Generate My Outlook"
-↓
+        ↓
 POST /api/analyze
-↓
+        ↓
 CSV read from filesystem → sent to GPT-4o with structured prompt
-↓
+        ↓
 Model returns strict JSON: { outlook[], insights[], non_obvious_observation }
-↓
+        ↓
 Analysis results render: decision prompt → 4-week outlook → insights → observation
+```
+
 ---
 
 ## What I'd build next
@@ -126,6 +134,9 @@ npm install
 ```
 
 Add your OpenAI API key to `.env.local`:
+```bash
+OPENAI_API_KEY=your_key_here
+```
 ```bash
 npm run dev
 ```
